@@ -1,0 +1,74 @@
+{
+  "name": "server",
+  "version": "0.1.0",
+  "description": "the-typescript-starter",
+  "keywords": [],
+  "homepage": "https://github.com/nrjdalal/the-typescript-starter#readme",
+  "bugs": "https://github.com/nrjdalal/the-typescript-starter/issues",
+  "repository": "nrjdalal/the-typescript-starter",
+  "funding": "https://github.com/sponsors/nrjdalal",
+  "license": "MIT",
+  "author": {
+    "name": "Neeraj Dalal",
+    "email": "admin@nrjdalal.com",
+    "url": "https://nrjdalal.com"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup && concurrently \"tsup --watch\" \"nodemon dist/index.js\"",
+    "prepare": "npx simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint --edit $1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "package.json": "sort-package-json"
+  },
+  "prettier": {
+    "importOrder": [
+      "<BUILTIN_MODULES>",
+      "",
+      "<THIRD_PARTY_MODULES>",
+      "",
+      "^@/(.*)$",
+      "",
+      "^[./]"
+    ],
+    "plugins": [
+      "@ianvs/prettier-plugin-sort-imports"
+    ],
+    "printWidth": 100,
+    "semi": false
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mediasoup": "^3.15.7",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.15",
+    "@types/socket.io": "^3.0.2",
+    "concurrently": "^9.1.2",
+    "lint-staged": "^15.5.2",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "simple-git-hooks": "^2.13.0",
+    "sort-package-json": "^3.2.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  }
+}
