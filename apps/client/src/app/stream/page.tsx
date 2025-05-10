@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 
 import { Mic, MicOff, Play, Square, Video, VideoOff } from "lucide-react"
 import { Device, types } from "mediasoup-client"
@@ -8,6 +9,7 @@ import { io, Socket } from "socket.io-client"
 
 import { cn } from "@/lib/utils"
 import { useWindowSize } from "@/hooks/use-window-size"
+import { Button } from "@/components/ui/button"
 import { Toggle } from "@/components/ui/toggle"
 import { StreamTimer } from "@/components/stream-timer"
 
@@ -221,6 +223,14 @@ export default function Page() {
           "bg-black",
         )}
       >
+        {isStreaming && (
+          <Link href="/watch" target="_blank">
+            <Button className="absolute right-7 bottom-7 z-10 cursor-pointer" size="sm">
+              Preview stream: /watch
+            </Button>
+          </Link>
+        )}
+
         <StreamTimer isActive={isStreaming} />
 
         <video
