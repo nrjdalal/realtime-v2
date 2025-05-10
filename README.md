@@ -37,3 +37,7 @@ pnpm run dev
 
 - [ ] Stream fallbacks can be extracted as a hook
 - [ ] Futher code splitting can be done for the client/server side
+
+## Possible issues
+
+- [ ] Sometime video stream doesn't start on initial run, need to refresh the page/ start stop the stream
