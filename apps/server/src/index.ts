@@ -6,7 +6,7 @@ import path from "node:path"
 
 import cors from "cors"
 import express from "express"
-import { Producer, Router, Transport } from "mediasoup/types"
+import { Router, Transport } from "mediasoup/types"
 import { Server } from "socket.io"
 
 import config from "@/config"

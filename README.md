@@ -1,8 +1,3 @@
-## What's left to do?
-
-- [ ] Optimize stream startup time, currently it takes 7-15 seconds for /watch page to show the stream (needs better understanding of `ffmpeg` initial transcoding args)
-- [ ] Work on /watch page like a video player and loader, etc and adding a screen sharing feature
-
 ## How to run the project?
 
 1. Clone the repository.
@@ -27,3 +22,18 @@ pnpm run dev
 
 > [!NOTE]
 > Make sure to rebuild the `mediasoup` package using `npm` instead of `pnpm`.
+
+## Files to look at
+
+- `app/client/src/app/stream/page.tsx`
+- `app/server/src/index.ts`
+
+## What's left to do?
+
+- [ ] Optimize stream startup time, currently it takes 7-15 seconds for /watch page to show the stream (needs better understanding of `ffmpeg` initial transcoding args)
+- [ ] Work on /watch page like a video player and loader, etc and adding a screen sharing feature
+
+## What else can be done?
+
+- [ ] Stream fallbacks can be extracted as a hook
+- [ ] Futher code splitting can be done for the client/server side
